@@ -1,0 +1,2 @@
+CALL "C:\Program Files\CCleaner\CCleaner.exe" /auto
+schtasks.exe /DELETE /TN RunOnceCCleaner /F

@@ -1,0 +1,11 @@
+Stuff:
+Remap
+Add Printers
+GPUpdate
+Restart Computer
+New Computer
+Rename Computer
+Swap Computers
+Readd mail profile
+Training Room Updates
+Drop Profile

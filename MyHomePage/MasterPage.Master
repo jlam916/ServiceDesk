@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet.css" type="text/css" />
+    <link rel="stylesheet" href="App_Assets/Forms/ADTools.css" type="text/css" />
+    <script src='<%=ResolveUrl( "~/Scripts/jquery-2.1.3.js" )%>'></script>
+    <meta name="description" content="My Master Page" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+</head>
+<body>
+    <form runat="server">
+        <br />
+        <br />
+        <div id="Header">
+            <div id="logoText">
+                Help Center Project
+            </div>
+            <div id="nav">
+                <a class="home fade-transition" href="http://W8-RKOEN">Home</a>
+                <a class="software fade-transition" href="http://W8-RKOEN">Software</a>
+                <a class="cmdcntr fade-transition" href="http://W8-RKOEN/Controls.aspx">Command Center</a>
+            </div>
+        </div>
+        <br />
+        <div id="container">
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

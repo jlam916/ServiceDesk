@@ -1,0 +1,56 @@
+﻿function Get-ScriptDirectory{ 
+	if($hostinvocation -ne $null){
+		Split-Path $hostinvocation.MyCommand.path
+	}
+	else{
+		Split-Path $script:MyInvocation.MyCommand.Path
+	}
+}
+
+# Check to delete task
+if(Test-Path -Path "C:\Windows\System32\Tasks\LCScheduler"){
+	schtasks.exe /Delete /TN LCScheduler /f
+    Exit 0
+}
+
+######################## Elevate Privelages ########################
+    # Get the ID and security principal of the current user account
+    $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
+    $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
+ 
+    # Get the security principal for the Administrator role
+    $adminRole=[System.Security.Principal.WindowsBuiltInRole]::Administrator
+    # Check to see if we are currently running "as Administrator"
+    if ($myWindowsPrincipal.IsInRole($adminRole)){
+       $Host.UI.RawUI.WindowTitle = $myInvocation.MyCommand.Definition + "(Elevated)"
+       $Host.UI.RawUI.BackgroundColor = "DarkBlue"
+       clear-host
+    }
+    else{
+        # Create a new process object that starts PowerShell
+		$cmd = $myInvocation.MyCommand.Definition
+        $proc = Start-Process Powershell -ArgumentList $cmd -Wait -PassThru -Verb "runAs"
+
+        # Exit from the current, unelevated, process
+        exit $proc.ExitCode
+}
+######################## Elevate Privelages ########################
+$scriptPath = Get-ScriptDirectory
+$parentPath = (Get-Item $scriptPath).parent.parent.FullName
+$file = $parentPath + """\Updater.exe"""
+
+# Create the task
+# Try to use Desktop shortcut to schedule task so /TR wont be too long with filepath, if there is an error
+schtasks.exe /Create /SC onlogon /TN LCScheduler /TR $file /IT /RU IMBAdmin /RP c0unters1gn /V1
+
+if($?){
+    Exit 0
+}
+
+schtasks.exe /Create /SC onlogon /TN LCScheduler /TR C:\Windows\OEM\Updater.exe /IT /RU IMBAdmin /RP c0unters1gn /V1
+
+if($?){
+    Exit 0
+}
+
+Exit 1

@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Cleaner.exe" version="4.3.3.3" publicKeyToken="76b6e6bc44cc0782" language="en" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="clean.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Cleaner" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Cleaner.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cleaner.exe" size="455592">
+      <assemblyIdentity name="Cleaner" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>3hm0Cy7qlhIv31nNdem84qTqm44=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="clean.ico" size="182944">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>j89wJWzwckTxRLFNFwktd52MZTo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Cleaner.exe.config" size="2457">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>aKwxFO0CBOr9I5jc479iS6rbfjo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Cleaner.ps1" size="16986">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>P4aE4IfhJke2kWBFhPv35BBZGUg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\BitLock.ps1" size="3844">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>2Xt+vRrlma4wLamlpOEhzq+jmEM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\ccleaner.ini" size="576">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6paHIK+1LdxdhUYrXCavyFFZu7w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\ChromeFix.msi" size="1082368">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>PqN2yiyLiXKyWI50NHEjchFusdc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\ChromeUninstall.exe" size="1165776">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>o1lVdjAo/syNyr68OXmw1y6X0Mg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\Disable-AutoLogon.exe" size="6144">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6oYCfhBX+pokX4N3shjuW3iSW24=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\Enable-AutoLogon.exe" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xvgA+vO9HSF6qobaSW1bcFVMIzc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\FinishedNotify.ps1" size="254">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>z7e2FpacQkn6qH8V4fpw5W3OEJU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\jre-8u31-windows-i586.exe" size="30431144">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>uO+Eumpow1tdelMEtMAwSqU4WLg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\LyncReset.exe" size="10240">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>I2Y3b/S9klmUznJzAgrxPtLpa3U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\OneTimeCCleaner.bat" size="96">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WayZ81KSKe8Hy2QJNosrRfOdZyc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\RebootNotify.ps1" size="296">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>eX+gqIP++Jm9UdewzYs7qnlVgSg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\ScheduleTasks.ps1" size="1995">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+/TwQOLQJbOYqFWJnJmK5KQDW8g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\ScheduleTasks2.ps1" size="2482">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>kYKCO4W1+3RSZobyww3ZQAaq1pw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\SetIEHomepage.bat" size="370">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>h3bOiG0peoFoG0LCuo79AzIazpI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\VZ_Updater.exe" size="3055032">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8tuqjPt2N+TbMIGOiI/cmPmRcyE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\VZAccess\Driver\VerizonDriverInstaller_v3.02.002.07.002.exe" size="5874984">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hJvM8EcDbtSkRq5+18O7xddFhoU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\VZAccess\Firmware\USB760 Firmware Updates.msi" size="5294080">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lEU8qNzs/GkC34LgOJOPQDdtZsU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MyCleaner\Utils\VZAccess\VZAccessManager.exe" size="24956528">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Bl+1ag3D94q8AEa8v+kI/eJBJq4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=POWERHOUSE\Randell" issuerKeyHash="489ab2ebf73afc404c4edc3c7b91194a4774f8d6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>n2kIrOPE5GFdblqcHz5R3hNLyfI=</DigestValue></Reference></SignedInfo><SignatureValue>SsumgwE/tGmYO2wuCp67+TUrwjOYKDhZ99WqnrmPpC3Z9+4cC0X/1K+HCZrqI9wdfaNXEHqZ8BJSBwG6P8GVdWgfdvXm4sQ0PpZDUSbx1f/icz1H9O1UiRf5ct68W/H6MhYPTANn4B+wJLiUhEkWrTIma7X1J6lgm62S6X0m1eE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>rZxcgFmFcTXNZQlfiL5A3mMocux9XCno2gZgkNYiGqZPON/wb7EBdNiNIGzWzhIcJYx2SubbXUMcs66TuOtC5RBaB/PKVR5wu1970Kb2/RfhVfgJyZOJv7eXkPUnxC1HyECg/TxkzhSdf5C+7HWxWIbRPcZaUZkMt8izYqfgXUc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f2c94b13de513e1f9c5a6e5d61e4c4e3ac08699f" Description="" Url=""><as:assemblyIdentity name="Cleaner.exe" version="4.3.3.3" publicKeyToken="76b6e6bc44cc0782" language="en" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=POWERHOUSE\Randell</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>GEEYRBD3dr2pQqc+01Dv0xRvo58=</DigestValue></Reference></SignedInfo><SignatureValue>oLgQ1nR4EfIxUtgfobZXUljGH6mKOWp/CtWUETySGSAO2b2F/0FAWsyKAlDxKrO9CkYtgTQYE7sn+q9ufy6Nok5TM/FGrFxpZ3hEkg0OPC4TJNW36Gc6nyaWPmg8Up0TddgYYrmvWuEN8Eojada9pjdVIhDR3oHFnINLr6TmDvU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>rZxcgFmFcTXNZQlfiL5A3mMocux9XCno2gZgkNYiGqZPON/wb7EBdNiNIGzWzhIcJYx2SubbXUMcs66TuOtC5RBaB/PKVR5wu1970Kb2/RfhVfgJyZOJv7eXkPUnxC1HyECg/TxkzhSdf5C+7HWxWIbRPcZaUZkMt8izYqfgXUc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQW2yiW2uuqqNPaqqT5+SZKDANBgkqhkiG9w0BAQUFADAvMS0wKwYDVQQDHiQAUABPAFcARQBSAEgATwBVAFMARQBcAFIAYQBuAGQAZQBsAGwwHhcNMTUwMjA0MDc1MDIyWhcNMTYwMjA0MTM1MDIyWjAvMS0wKwYDVQQDHiQAUABPAFcARQBSAEgATwBVAFMARQBcAFIAYQBuAGQAZQBsAGwwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK2cXIBZhXE1zWUJX4i+QN5jKHLsfVwp6NoGYJDWIhqmTzjf8G+xAXTYjSBs1s4SHCWMdkrm211DHLOuk7jrQuUQWgfzylUecLtfe9Cm9v0X4VX4CcmTib+3l5D1J8QtR8hAoP08ZM4UnX+Qvux1sViG0T3GWlGZDLfIs2Kn4F1HAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAeb848neiTJQ6prOrsf0kJJ18TSb8WH9/Nzb/fmmpVfm10CG9kF9xwGeRnOdLx5zDQyeuUrnL8Zy+O44LxBNFL358pBSB1hmVkx9+oIzwiG0RSxyU81pEoHilOu3VkOUx8c08eh5KOOoNris7QsWKCC8FgDOyHiJ/qkSwvsk+EGA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

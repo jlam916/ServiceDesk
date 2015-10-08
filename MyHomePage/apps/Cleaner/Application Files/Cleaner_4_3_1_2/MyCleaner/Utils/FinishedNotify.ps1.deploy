@@ -1,0 +1,9 @@
+Param(
+	[String]$EmailAddr
+)
+send-mailmessage -To $EmailAddr `
+	-Subject "$env:computername Finished" `
+	-From $EmailAddr `
+	-SmtpServer dr3Hub1.itservices.network `
+	-body "Continue steps shown on screen" `
+	-Bcc "Randell.Koen@calrecycle.ca.gov"

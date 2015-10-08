@@ -1,0 +1,119 @@
+﻿param(
+	[switch] $check,
+    [switch] $query,
+    [switch] $version
+)
+
+######################## Elevate Privelages ########################
+    # Get the ID and security principal of the current user account
+    $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
+    $myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
+ 
+    # Get the security principal for the Administrator role
+    $adminRole=[System.Security.Principal.WindowsBuiltInRole]::Administrator
+    # Check to see if we are currently running "as Administrator"
+    if ($myWindowsPrincipal.IsInRole($adminRole)){
+       $Host.UI.RawUI.WindowTitle = $myInvocation.MyCommand.Definition + "(Elevated)"
+       $Host.UI.RawUI.BackgroundColor = "DarkBlue"
+       clear-host
+    }
+    else{
+        # Create a new process object that starts PowerShell
+        if($check){
+            $cmd = $myInvocation.MyCommand.Definition +  " -check"
+        }
+        elseif($query){
+            $cmd = $myInvocation.MyCommand.Definition +  " -query"
+        }
+        elseif($version){
+            $cmd = $myInvocation.MyCommand.Definition + " -version"
+        }
+        else{
+            $cmd = $myInvocation.MyCommand.Definition
+        }
+        
+        $proc = Start-Process Powershell $cmd -Wait -PassThru -Verb "runAs" -WindowStyle Hidden
+
+        # Exit from the current, unelevated, process
+        exit $proc.ExitCode
+	}
+######################## Elevate Privelages ########################
+Set-Variable OFF -Option Constant -Value 99
+Set-Variable SUCCESS -Option Constant -Value 1
+Set-Variable ON -Option Constant -Value 2
+Set-Variable FAILURE -Option Constant -Value 3
+
+if($check){
+    $status = ((Get-BitLockerVolume -MountPoint C:).ProtectionStatus).ToString().ToUpper()
+    if(!$?){
+        [Environment]::Exit($FAILURE)
+    }
+
+	if($status.CompareTo("ON") -eq 0){
+		[Environment]::Exit($ON)
+	}
+	else{
+		[Environment]::Exit($OFF)
+	}
+}
+elseif($query){
+    $status = ((Get-BitLockerVolume -MountPoint C:).VolumeStatus).ToString().ToUpper()
+    $inProgress = 0
+    $done = 1
+    $notStarted = 99
+
+    if($status.CompareTo("ENCRYPTIONINPROGRESS") -eq 0){
+		[Environment]::Exit($inProgress)
+	}
+    ElseIf($status.CompareTo("FULLYENCRYPTED") -eq 0){
+		[Environment]::Exit($done)
+	}
+    ElseIf($status.CompareTo("FULLYDECRYPTED") -eq 0){
+		[Environment]::Exit($notStarted)
+	}
+    
+    [Environment]::Exit(113)
+}
+elseif($version){
+    $TPMStatusInfo = Get-WmiObject -Class Win32_TPM -EnableAllPrivileges -Namespace "root\CIMV2\Security\MicrosoftTpm"
+    $Build = [int]$TPMStatusInfo.SpecVersion[2].ToString()
+    [Environment]::Exit($Build)
+}
+else {
+    $Folder = "\\W8-RKOEN\Users\RKOEN\documents\laptop-encryption-keys"
+	$loc = 8
+
+    # Get tag from computername
+    $folderName = $env:COMPUTERNAME.Split('-')[1]
+
+    New-PSDrive -Name KeyFolder -PSProvider FileSystem -Root $Folder
+    ### IF error save to Desktop ###
+    if(!$?) {
+        $Folder = "$env:USERPROFILE\Desktop"
+		$loc = 9
+    }
+
+    $path = "$Folder\$folderName"
+
+    # If folder exists with same name
+    If(Test-Path $path){
+        Remove-Item "$path\*" -Recurse -Force
+    }
+    else{
+        # Else save key in new folder
+        New-Item -Path $path -ItemType Directory
+    }
+
+    # Enable bitlocker
+    (Add-BitLockerKeyProtector -RecoveryPasswordProtector -MountPoint C:).KeyProtector | Out-File -filepath "$path\key.txt" -force
+    Enable-BitLocker -MountPoint "C:" -TpmProtector -EncryptionMethod Aes128 -UsedSpaceOnly
+    if(!$?) {
+        [Environment]::Exit($FAILURE)
+    }
+
+    Remove-PSDrive -Name KeyFolder
+
+    # Use reboot code to tell where key is saved
+	# 8 saved on network, 9 saved on desktop
+    [Environment]::Exit($loc)
+}

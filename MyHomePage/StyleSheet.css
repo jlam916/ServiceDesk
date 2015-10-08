@@ -1,0 +1,212 @@
+﻿/* GENERAL */
+
+h2 {
+    color: blue;
+    font-family: Georgia, serif;
+    font-variant: normal;
+    text-transform: none;
+    font-weight: 100;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.OuterDiv h1 {
+    color: red;
+    padding-bottom: 0px;
+    font-family: Georgia, serif;
+    font-variant: normal;
+    text-transform: none;
+    font-weight: 100;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+html, body {
+    color: #000000;
+    background-color: #7f7f7f;
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
+    height: 100%;
+}
+
+body {
+    border-top: 17px solid #7f7f7f;
+    font-family: Georgia, serif;
+    font-size: 76%;
+    line-height: 1.5em;
+    height: 100.5%;
+}
+
+#container {
+    float: none;
+    width: 80%;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    text-align: left;
+    border-top: 5px solid #d9b860;
+    border-bottom: 5px solid #d9b860;
+}
+
+#Header {
+    background: rgb(235,235,232);
+    border-bottom: 3px solid #d9b860;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: auto;
+    height: 61px;
+}
+
+#logoText {
+    position: absolute;
+    height: 24px;
+    line-height: 100%;
+    font-size: 36px;
+    font-family: 'Agency FB';
+    top: 13px;
+    left: 15px;
+}
+
+#nav {
+    z-index: 10;
+    font-size: 20px;
+    float: right;
+    overflow: hidden;
+    height: 34px;
+    margin-top: 27px;
+}
+
+    #nav a {
+        text-decoration: none;
+        line-height: 2em;
+        color: rgb(102,102,102);
+        border-bottom: 1px solid transparent;
+        display: block;
+        padding: 0 0.6em;
+        float: left;
+        height: 32px;
+    }
+
+        #nav a:hover,
+        .home nav a.home,
+        .software nav a.software,
+        .cmdcntr nav a.cmdcntr {
+            border-bottom: 10px solid #d9b860;
+        }
+
+img {
+    vertical-align: middle;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.OuterDiv {
+    /*margin: 10px;*/
+}
+
+.InnerDiv {
+    /*position: relative;
+    top: -30px;*/
+}
+
+.listIndent {
+    margin-left: 50px;
+}
+
+.decoration:link {
+    text-decoration: none;
+    font-family: Tahoma, serif;
+}
+
+.decoration:visited {
+    text-decoration: none;
+    font-family: Tahoma, serif;
+}
+
+.decoration:hover {
+    border-bottom: 2px solid #006EFF;
+}
+
+.hyperlink {
+    color: red;
+    margin-left: 20px;
+    font-family: Tahoma, serif;
+}
+
+    .hyperlink:visited, .hyperlink:link {
+        text-decoration: none;
+        font-family: Tahoma, serif;
+    }
+
+    .hyperlink:hover {
+        border-bottom: 2px solid #006EFF;
+    }
+
+.headlines {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    font-family: Tahoma, serif;
+    color: black;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.container {
+    position: relative;
+    /*border: thin inset #0000FF; */
+    background-color: #EBEBEB;
+    border-top: 5px solid #d9b860;
+    border-bottom: 5px solid #d9b860;
+}
+
+.paragraph {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: Tahoma, serif;
+}
+
+.button {
+    border-top: 1px solid #96d1f8;
+    background: #65a9d7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+    background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+    background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+    background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+    background: -o-linear-gradient(top, #3e779d, #65a9d7);
+    padding: 5px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center;
+    /*border-style: none;*/
+}
+
+    .button:hover {
+        border-top-color: #28597a;
+        background: #28597a;
+        color: #ccc;
+        cursor: pointer;
+    }
+
+    .button:active {
+        border-top-color: #1b435e;
+        background: #1b435e;
+    }

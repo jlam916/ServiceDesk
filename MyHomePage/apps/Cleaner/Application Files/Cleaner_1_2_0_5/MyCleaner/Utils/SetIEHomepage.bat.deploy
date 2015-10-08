@@ -1,0 +1,8 @@
+﻿#=====================================================
+# Created on: 7/21/2014 12:10 PM
+# Last update: 7/21/2014 12:15 PM
+# Created by: Reese Freeman
+# Filename: SetIEHomepage.bat
+#=====================================================
+
+REG ADD "HKCU\Software\Microsoft\Internet Explorer\Main" /v "Start Page" /t "REG_SZ" /d "http://remote.calrecycle.ca.gov" /f

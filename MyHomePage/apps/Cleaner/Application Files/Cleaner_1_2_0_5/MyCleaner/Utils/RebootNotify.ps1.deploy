@@ -1,0 +1,10 @@
+Param(
+	[String]$EmailAddr
+)
+
+send-mailmessage -To $EmailAddr `
+	-Subject "$env:computername Rebooting" `
+	-From $EmailAddr `
+	-SmtpServer dr3Hub1.itservices.network `
+	-body "An Update has caused the laptop to reboot. Log in to continue script." `
+	-Bcc "Randell.Koen@calrecycle.ca.gov"

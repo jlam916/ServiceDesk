@@ -1,0 +1,362 @@
+﻿<%@ Page Title="Reservation" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeFile="Reservation.aspx.cs" Inherits="Reservation" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="content" runat="Server">
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="sm1" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="JS/Reservation.js"></script>
+    <style>
+        .Image {
+            width: 100%;
+        }
+
+        .Label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .rigth {
+            float: right;
+        }
+
+        .full {
+            margin-left: 2%;
+        }
+
+        .half {
+            width: 50%;
+            margin-left: 2%;
+        }
+
+        #lblMsg {
+            font-size: 15px;
+        }
+
+        #networkWarn, #permSetupWarn {
+            color: red;
+            font-weight: 500;
+        }
+    </style>
+
+    <asp:Image runat="server" AlternateText="CalRecycleHeader" ImageUrl="~/App_Assets/Forms/CalRecycleLogo/Header.jpg" CssClass="Image" /><br />
+    <br />
+    <asp:Table runat="server" CssClass="full" Width="98%">
+        <asp:TableRow>
+            <asp:TableCell Width="33%" VerticalAlign="Top">
+                <asp:Panel ID="Panel1" runat="server">
+                    <asp:Label Text="Contact Information" runat="server" CssClass="Label"></asp:Label>
+                    <asp:Table runat="server" Width="100%">
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="10%">Email</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox runat="server" Width="90%" ID="txtEmail"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="13%">First Name</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox runat="server" Width="90%" ID="txtFName"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="10%">Last Name</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox runat="server" Width="90%" ID="txtLName"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="18%">Ticket Number</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox runat="server" Width="90%" ID="txtTNumber" MaxLength="5"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:Panel>
+            </asp:TableCell>
+            <asp:TableCell Width="25%" VerticalAlign="Top">
+                <asp:Panel ID="Panel2" runat="server">
+                    <asp:Label Text="Meeting Information" runat="server" CssClass="Label"></asp:Label>
+                    <asp:Table runat="server" Width="100%">
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="20%">Date</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox ID="txtDate" runat="server" Width="75px"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender ID="dateExtender" TargetControlID="txtDate" Animated="true" runat="server"></ajaxToolkit:CalendarExtender>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="45%">Start Time<br /> (time that meeting starts)</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:DropDownList ID="ddStartHour" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddStartMinute" runat="server"></asp:DropDownList>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="20%">End Time</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:DropDownList ID="ddEndHour" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddEndMinute" runat="server"></asp:DropDownList>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:Panel>
+            </asp:TableCell>
+            <asp:TableCell VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Label Text="Presentation Package" runat="server" CssClass="Label"></asp:Label>
+                    <asp:Table runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbPres01" Text="Pres01" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbPres02" Text="Pres02" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbPres03" Text="Pres03" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbPres04" Text="Pres04" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbPres05" Text="Pres05" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:Panel>
+            </asp:TableCell>
+            <asp:TableCell VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Label Text="Web Conference Machine" runat="server" CssClass="Label"></asp:Label>
+                    <asp:Table runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbWebConf01" Text="WebConf01" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbWebConf02" Text="WebConf02" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:CheckBox runat="server" ID="cbWebConf03" Text="WebConf03" />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:Panel>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+
+    <br />
+    <asp:Table runat="server" CssClass="full" Width="98%">
+
+        <asp:TableRow>
+            <asp:TableCell Width="33%" VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Label Text="Meeting Details" runat="server" CssClass="Label"></asp:Label>
+                    <asp:Table runat="server" Width="100%">
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="10%">Meeting Link</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox runat="server" Width="90%" ID="txtMeetingLink"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="13%">Conference Call Number</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox runat="server" Width="90%" ID="txtConferenceNumber"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="10%">Leader Code</asp:TableCell>
+                            <asp:TableCell Width="70%">
+                                <asp:TextBox runat="server" Width="90%" ID="txtLeaderCode"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="18%">Particpant Code</asp:TableCell>
+                            <asp:TableCell Width="70%">
+			    <asp:TextBox runat="server" Width="90%" ID="txtPartipantCode"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+			<asp:TableRow Width="100%">
+                            <asp:TableCell Width="18%">Meeting ID</asp:TableCell>
+                            <asp:TableCell Width="70%">
+			    <asp:TextBox runat="server" Width="90%" ID="txtMeetingID"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:Panel>
+            </asp:TableCell>
+            <asp:TableCell Width="33%" VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Label Text="Location Information" runat="server" CssClass="Label"></asp:Label>
+                    <asp:Table runat="server" Width="100%">
+                        <asp:TableRow Width="100%">
+                            <asp:TableCell Width="6%">Building</asp:TableCell>
+                            <asp:TableCell>
+                                <asp:DropDownList runat="server" ID="ddLocation" onchange="ddlocation_selectedindexchanged()" ClientIDMode="Static" Width="160px"></asp:DropDownList>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%" ID="tblRowConference" ClientIDMode="Static">
+                            <asp:TableCell Width="30%">Conference Room</asp:TableCell>
+                            <asp:TableCell>
+                                <asp:DropDownList runat="server" ID="ddConferenceRooms" onchange="ddConferenceRooms_selectedindexchanged()" ClientIDMode="Static" Width="160px"></asp:DropDownList>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100%" ID="tblRowTraining" ClientIDMode="Static">
+                            <asp:TableCell Width="6%">Training Room</asp:TableCell>
+                            <asp:TableCell>
+                                <asp:DropDownList runat="server" ID="ddTrainingRooms" onchange="ddTrainingRooms_selectedindexchanged()" ClientIDMode="Static" Width="160px"></asp:DropDownList>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Width="100" ID="tblRowHearing" ClientIDMode="Static">
+                            <asp:TableCell Width="6%">Hearing Room</asp:TableCell>
+                            <asp:TableCell>
+                                <asp:DropDownList runat="server" ID="ddHearingRooms" onchange="ddHearingRooms_selectedindexchanged()" ClientIDMode="Static" Width="160px"></asp:DropDownList>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:Panel>
+            </asp:TableCell>
+
+            <asp:TableCell Width="25%" VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Label Text="Equipment Requested" runat="server" CssClass="Label"></asp:Label>
+                    <asp:Table runat="server">
+                        <asp:TableRow Width="50%">
+                            <asp:TableCell>
+                                <asp:CheckBoxList ID="chkEquipment" RepeatColumns="2" CellSpacing="5" ClientIDMode="Static" runat="server">
+                                    <asp:ListItem Text="Laptop" />
+                                    <asp:ListItem Text="Projector Screen" />
+                                    <asp:ListItem Text="Projector" />
+                                    <asp:ListItem Text="Web Cam" />
+                                    <asp:ListItem Text="Speakers" />
+                                    <asp:ListItem Text="Polycom Conference Phone" />
+                                    <asp:ListItem Text="Microphone" />
+                                    <asp:ListItem Text="Other (Leave in Comments)" />
+                                </asp:CheckBoxList>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:Panel>
+
+                <asp:CustomValidator ID="CustomValidator"
+                    ErrorMessage="<br /> Please select at least one item under Equipment Request"
+                    BackColor="Yellow"
+                    ForeColor="Blue"
+                    ClientValidationFunction="ValidateCheckBoxList"
+                    runat="server"
+                    Display="Dynamic" />
+
+                <asp:RequiredFieldValidator ID="reqVAlDate" runat="server"
+                    ControlToValidate="txtDate"
+                    ErrorMessage="<br /> Meeting date is a required field <br />"
+                    BackColor="Yellow"
+                    ForeColor="Blue"
+                    Display="Dynamic">
+                </asp:RequiredFieldValidator>
+
+                <asp:RangeValidator ID="NumberCompareValidator" runat="server"
+                    ControlToValidate="ddStartHour"
+                    Type="Integer"
+                    ErrorMessage="Meeting starting hour is a required field <br />"
+                    MaximumValue="12"
+                    MinimumValue="1"
+                    BackColor="Yellow"
+                    ForeColor="Blue"
+                    Display="Dynamic">
+                </asp:RangeValidator>
+
+                <asp:RangeValidator ID="NumberCompareValidator1" runat="server"
+                    ControlToValidate="ddStartMinute"
+                    Type="Integer"
+                    ErrorMessage="Meeting starting minute is a required field <br />"
+                    MaximumValue="45"
+                    MinimumValue="00"
+                    BackColor="Yellow"
+                    ForeColor="Blue"
+                    Display="Dynamic">
+                </asp:RangeValidator>
+
+                <asp:RangeValidator ID="Rangevalidator2" runat="server"
+                    ControlToValidate="ddEndHour"
+                    Type="Integer"
+                    ErrorMessage="Meeting ending hour is a required field <br />"
+                    MaximumValue="12"
+                    MinimumValue="1"
+                    BackColor="Yellow"
+                    ForeColor="Blue"
+                    Display="Dynamic">
+                </asp:RangeValidator>
+
+                <asp:RangeValidator ID="Rangevalidator3" runat="server"
+                    ControlToValidate="ddEndMinute"
+                    Type="Integer"
+                    ErrorMessage="Meeting ending minute is is a required field <br />"
+                    MaximumValue="45"
+                    MinimumValue="00"
+                    BackColor="Yellow"
+                    ForeColor="Blue"
+                    Display="Dynamic">
+                </asp:RangeValidator>
+
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                    ControlToValidate="NetworkRadioButtonList" ErrorMessage="Connection Type is a required field <br />"
+                    BackColor="Yellow"
+                    ForeColor="Blue"
+                    Display="Dynamic">
+                </asp:RequiredFieldValidator>
+            </asp:TableCell><asp:TableCell VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Label Text="Connection Type" runat="server" CssClass="Label"></asp:Label>
+                    <br />
+                    Is Calrecycle Network Access Required?
+                    <br />
+                    <asp:RadioButtonList ID="NetworkRadioButtonList" runat="server">
+                        <asp:ListItem ID="networkYes">Yes</asp:ListItem>
+                        <asp:ListItem ID="networkNo">No (Wifi will automatically be enabled)</asp:ListItem>
+                    </asp:RadioButtonList>
+                    <label id="networkWarn">CalRecycle Network Access Not Available in Selected Room</label>
+                    <label id="permSetupWarn">This Room Has a Permanent Setup</label>
+                </asp:Panel>
+                <br />
+                <br />
+            </asp:TableCell></asp:TableRow></asp:Table><asp:Table runat="server" CssClass="full" Width="98%">
+
+        <asp:TableRow runat="server" Width="100%">
+            <asp:TableCell Width="33%" VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Button runat="server" CssClass="button" ID="btnReset" OnClick="btnReset_Click" Text="Reset" CausesValidation="false" />
+                </asp:Panel>
+            </asp:TableCell></asp:TableRow></asp:Table><asp:Table runat="server" CssClass="full" Width="98%">
+
+        <asp:TableRow runat="server" Width="100%">
+            <asp:TableCell Width="33%" VerticalAlign="Top">
+                <asp:Panel runat="server">
+                    <asp:Button runat="server" CssClass="button" ID="btnHardware" OnClick="btnHardware_Click" Text="Hardware Checkout" CausesValidation="false" />
+                    <asp:HyperLink ID="hlHC" runat="server" ClientIDMode="Static"></asp:HyperLink>
+                </asp:Panel>
+            </asp:TableCell></asp:TableRow></asp:Table><hr />
+
+    <h1 style="font-size: x-large; text-align: center">Comments:</h1>&nbsp&nbsp<asp:TextBox Width="95%" TextMode="multiline" Columns="50" Rows="10" runat="server" ID="txtBoxComments" BackColor="#99ccff"></asp:TextBox><%--<FTB:FreeTextBox ID="FreeTextBox1" runat="server" Width="100%"></FTB:FreeTextBox>--%><%--<textarea id="editor1" name="editor1" class="ckeditor" ></textarea>--%><br />
+    <br />
+    <asp:Panel Style="text-align: center" runat="server">
+        <asp:Button runat="server" CssClass="button" ID="btnSubmit" OnClick="btnSubmit_Click" Text="Submit" /><br />
+        <asp:Label runat="server" ID="lblMsg"></asp:Label><br /></asp:Panel></asp:Content>

@@ -1,0 +1,65 @@
+﻿function Get-ScriptDirectory{ 
+	if($hostinvocation -ne $null){
+		Split-Path $hostinvocation.MyCommand.path
+	}
+	else{
+		Split-Path $script:MyInvocation.MyCommand.Path
+	}
+}
+
+######################## Elevate Privelages ########################
+	# Get the ID and security principal of the current user account
+	$myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()
+	$myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)
+ 
+	# Get the security principal for the Administrator role
+	$adminRole=[System.Security.Principal.WindowsBuiltInRole]::Administrator
+	# Check to see if we are currently running "as Administrator"
+	if ($myWindowsPrincipal.IsInRole($adminRole)){
+	   $Host.UI.RawUI.WindowTitle = $myInvocation.MyCommand.Definition + "(Elevated)"
+	   $Host.UI.RawUI.BackgroundColor = "DarkBlue"
+	   clear-host
+	}
+	else{
+		# Create a new process object that starts PowerShell
+		$cmd = $myInvocation.MyCommand.Definition
+		$proc = Start-Process Powershell -ArgumentList $cmd -Wait -PassThru -Verb "runAs"
+
+		# Exit from the current, unelevated, process
+		exit $proc.ExitCode
+}
+######################## Elevate Privelages ########################
+$scriptPath = Get-ScriptDirectory
+$parentPath = (Get-Item $scriptPath).parent.parent.FullName
+$file = $parentPath + """\MyCleaner\Utils\SetIEHomepage.bat"""
+## For debugging on desktop
+#$file = $parentPath + """\CalRecycle\Desktop\SetIEHomepage.bat"""
+
+# Create the task
+# Try to use Desktop shortcut to schedule task so /TR wont be too long with filepath, if there is an error
+#schtasks.exe /Create /SC OnLogon /TN LCScheduler /TR $file /RU IMBAdmin /RP c0unters1gn /V1
+
+#if($?){
+ #   Exit 0
+#}
+
+schtasks.exe /Create /SC OnLogon /TN IEScheduler /TR $file /RU CalRecycle /RP Recycle1 /V1 /F
+$file = $parentPath + "\MyCleaner\Utils\ccleaner.ini"
+Copy-Item -Path $file -Destination "C:\Program Files\CCleaner\ccleaner.ini" -Force
+Start-Sleep -m 1500
+
+$file = $parentPath + """\MyCleaner\Utils\OneTimeCCleaner.bat"""
+## For debugging on desktop
+#$file = $parentPath + """\CalRecycle\Desktop\One-timeCCleaner.ps1"""
+schtasks.exe /Create /SC OnLogon /TN RunOnceCCleaner /TR $file /RU CalRecycle /RP Recycle1 /V1 /F
+Start-Sleep -m 1500
+
+$file = $parentPath + "\MyCleaner\Utils\LyncReset.exe"
+schtasks.exe /Create /SC OnLogon /TN LyncReset /TR $file /RU CalRecycle /RP Recycle1 /V1 /F
+Start-Sleep -m 1500
+
+if($?){
+	Exit 0
+}
+
+Exit 1
