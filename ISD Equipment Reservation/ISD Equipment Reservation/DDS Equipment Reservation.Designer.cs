@@ -598,7 +598,7 @@
             this.HeadPhones_chkListBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeadPhones_chkListBox.FormattingEnabled = true;
             this.HeadPhones_chkListBox.Items.AddRange(new object[] {
-            "Headphones  "});
+            "HotSpot 1    "});
             this.HeadPhones_chkListBox.Location = new System.Drawing.Point(1594, 88);
             this.HeadPhones_chkListBox.Name = "HeadPhones_chkListBox";
             this.HeadPhones_chkListBox.Size = new System.Drawing.Size(312, 189);
@@ -617,7 +617,9 @@
             "Ergonomic Keyboard  ",
             "Ergonomic Mouse  ",
             "Surge Protectors  ",
-            "Docking Station  "});
+            "Docking Station  ",
+            "Logitech c920 Webcam  ",
+            "Headphones  "});
             this.Accessories_chkListBox.Location = new System.Drawing.Point(1276, 88);
             this.Accessories_chkListBox.Name = "Accessories_chkListBox";
             this.Accessories_chkListBox.Size = new System.Drawing.Size(311, 189);
@@ -795,7 +797,7 @@
             this.Headphones_lbl.Name = "Headphones_lbl";
             this.Headphones_lbl.Size = new System.Drawing.Size(164, 28);
             this.Headphones_lbl.TabIndex = 6;
-            this.Headphones_lbl.Text = "Headphones";
+            this.Headphones_lbl.Text = "HotSpots";
             // 
             // pictureBox7
             // 
@@ -840,6 +842,7 @@
             "Flash Drive 11  ",
             "Flash Drive 23  ",
             "Flash Drive 46  ",
+            "Flash Drive 47  ",
             "Flash Drive 48  ",
             "Flash Drive 49  ",
             "Flash Drive 51  ",
@@ -962,6 +965,7 @@
             this.MainFormPickUpDate_DateTimePicker.Size = new System.Drawing.Size(308, 26);
             this.MainFormPickUpDate_DateTimePicker.TabIndex = 7;
             this.MainFormPickUpDate_DateTimePicker.Value = new System.DateTime(2015, 6, 24, 0, 0, 0, 0);
+            this.MainFormPickUpDate_DateTimePicker.ValueChanged += new System.EventHandler(this.MainFormPickUpDate_DateTimePicker_ValueChanged);
             // 
             // PickUpTime_lbl
             // 
@@ -1011,7 +1015,7 @@
             "4:00 PM",
             "4:30 PM",
             "5:00 PM"});
-            this.PickUpTime_ComboBox.Location = new System.Drawing.Point(321, 58);
+            this.PickUpTime_ComboBox.Location = new System.Drawing.Point(321, 55);
             this.PickUpTime_ComboBox.Name = "PickUpTime_ComboBox";
             this.PickUpTime_ComboBox.Size = new System.Drawing.Size(308, 26);
             this.PickUpTime_ComboBox.TabIndex = 14;
@@ -1042,7 +1046,7 @@
             "4:00 PM",
             "4:30 PM",
             "5:00 PM"});
-            this.ReturnTime_ComboBox.Location = new System.Drawing.Point(957, 58);
+            this.ReturnTime_ComboBox.Location = new System.Drawing.Point(957, 55);
             this.ReturnTime_ComboBox.Name = "ReturnTime_ComboBox";
             this.ReturnTime_ComboBox.Size = new System.Drawing.Size(307, 26);
             this.ReturnTime_ComboBox.TabIndex = 15;

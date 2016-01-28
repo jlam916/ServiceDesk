@@ -98,7 +98,7 @@ namespace ISD_Equipment_Reservation
                 }
             }
 
-            // Take HeadPhones Checkbox List Values
+            // Take HotSpot Checkbox List Values
 
             for (int i = 0; i < HeadPhones_chkListBox.Items.Count; i++)
             {
@@ -732,7 +732,7 @@ namespace ISD_Equipment_Reservation
             Availability_datagrid.ReadOnly = true;
             string myConnection = "datasource=10.96.75.20;port=3306;username=root;password=Root";
             MySqlConnection conDatabase = new MySqlConnection(myConnection);
-            sda = new MySqlDataAdapter("Select Log, Status, SR_Number, Equipment_Requested, Requester_Name, Reservation_PickUp_Date, Reservation_Return_Date from database.isdequipments where (Status = 'Reserved' OR Status = 'Check-Out') AND (Equipment_Requested LIKE '%Laptop%' OR Equipment_Requested LIKE '%LT Laptop%' OR Equipment_Requested LIKE '%Projector%' OR Equipment_Requested LIKE '%Flash Drive%' OR Equipment_Requested LIKE '%Ergonomic Keyboard%' OR Equipment_Requested LIKE '%Ergonomic Mouse%' OR Equipment_Requested LIKE '%Surge Protectors%' OR Equipment_Requested LIKE '%Docking Station%' OR Equipment_Requested LIKE '%Headphones%') ;", conDatabase);
+            sda = new MySqlDataAdapter("Select Log, Status, SR_Number, Equipment_Requested, Requester_Name, Reservation_PickUp_Date, Reservation_Return_Date from database.isdequipments where (Status = 'Reserved' OR Status = 'Check-Out') AND (Equipment_Requested LIKE '%Laptop%' OR Equipment_Requested LIKE '%LT Laptop%' OR Equipment_Requested LIKE '%Projector%' OR Equipment_Requested LIKE '%Flash Drive%' OR Equipment_Requested LIKE '%Ergonomic Keyboard%' OR Equipment_Requested LIKE '%Ergonomic Mouse%' OR Equipment_Requested LIKE '%Surge Protectors%' OR Equipment_Requested LIKE '%Docking Station%' OR Equipment_Requested LIKE '%Logitech c920 Webcam%' OR Equipment_Requested LIKE '%Headphones%' OR Equipment_Requested LIKE '%HotSpot%') ;", conDatabase);
             //sda = new MySqlDataAdapter("Select Log, Status, SR_Number, Equipment_Requested, Requester_Name, Reservation_PickUp_Date, Reservation_Return_Date from database.isdequipments where (Reservation_PickUp_Date BETWEEN '" + MainFormPickUpDate_DateTimePicker.Text + "' AND '" + MainFormReturnDate_DateTimePicker.Text + "' OR Reservation_Return_Date BETWEEN '" + MainFormPickUpDate_DateTimePicker.Text + "' AND '" + MainFormReturnDate_DateTimePicker.Text + "')  AND (Status = 'Reserved' OR Status = 'Check-Out') AND (Equipment_Requested LIKE '%Laptop%' OR Equipment_Requested LIKE '%LT Laptop%' OR Equipment_Requested LIKE '%Projector%' OR Equipment_Requested LIKE '%Flash Drive%' OR Equipment_Requested LIKE '%Ergonomic Keyboard%' OR Equipment_Requested LIKE '%Ergonomic Mouse%' OR Equipment_Requested LIKE '%Surge Protectors%' OR Equipment_Requested LIKE '%Docking Station%' OR Equipment_Requested LIKE '%Headphones%') ;", conDatabase);
             dt = new DataTable();
             sda.Fill(dt);
@@ -892,6 +892,11 @@ namespace ISD_Equipment_Reservation
         }
 
         private void Availability_datagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MainFormPickUpDate_DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
         }

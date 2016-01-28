@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="ISD_Equipment_Reservation.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <userSettings>
+        <ISD_Equipment_Reservation.Properties.Settings>
+            <setting name="textbox" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ETextBox" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="MTextBox" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="EMTextBox" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="HeadTextBox" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="MiniTextBox" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="KensingtonTextBox" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="AdessoTextBox" serializeAs="String">
+                <value />
+            </setting>
+        </ISD_Equipment_Reservation.Properties.Settings>
+    </userSettings>
+</configuration>

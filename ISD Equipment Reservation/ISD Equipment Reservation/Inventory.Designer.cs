@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.InventoryCount_lbl = new System.Windows.Forms.Label();
@@ -124,6 +124,8 @@
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -141,6 +143,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -448,9 +452,9 @@
             this.MiniKeyboard_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.MiniKeyboard_lbl.Location = new System.Drawing.Point(4, 79);
             this.MiniKeyboard_lbl.Name = "MiniKeyboard_lbl";
-            this.MiniKeyboard_lbl.Size = new System.Drawing.Size(143, 18);
+            this.MiniKeyboard_lbl.Size = new System.Drawing.Size(115, 18);
             this.MiniKeyboard_lbl.TabIndex = 18;
-            this.MiniKeyboard_lbl.Text = "HP Mini Keyboard";
+            this.MiniKeyboard_lbl.Text = "Mini Keyboard";
             // 
             // MiniKeyboard_txtBox
             // 
@@ -568,7 +572,7 @@
             this.tableLayoutPanel3.Controls.Add(this.ErgoMouse2_lbl, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.ReStockEMousetxtBox, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.EMouseConfirm_btn, 2, 7);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1043, 126);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1047, 126);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 9;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
@@ -580,14 +584,14 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(864, 318);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(860, 318);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // MiniConfirm_btn
             // 
             this.MiniConfirm_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.MiniConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MiniConfirm_btn.Location = new System.Drawing.Point(578, 74);
+            this.MiniConfirm_btn.Location = new System.Drawing.Point(576, 74);
             this.MiniConfirm_btn.Name = "MiniConfirm_btn";
             this.MiniConfirm_btn.Size = new System.Drawing.Size(192, 28);
             this.MiniConfirm_btn.TabIndex = 19;
@@ -599,7 +603,7 @@
             // 
             this.RestockMini_txtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RestockMini_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.RestockMini_txtBox.Location = new System.Drawing.Point(291, 76);
+            this.RestockMini_txtBox.Location = new System.Drawing.Point(290, 76);
             this.RestockMini_txtBox.Name = "RestockMini_txtBox";
             this.RestockMini_txtBox.Size = new System.Drawing.Size(191, 24);
             this.RestockMini_txtBox.TabIndex = 9;
@@ -607,7 +611,7 @@
             // AdessoConfirm_btn
             // 
             this.AdessoConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdessoConfirm_btn.Location = new System.Drawing.Point(578, 214);
+            this.AdessoConfirm_btn.Location = new System.Drawing.Point(576, 214);
             this.AdessoConfirm_btn.Name = "AdessoConfirm_btn";
             this.AdessoConfirm_btn.Size = new System.Drawing.Size(192, 28);
             this.AdessoConfirm_btn.TabIndex = 20;
@@ -618,7 +622,7 @@
             // KensingtonConfirm_btn
             // 
             this.KensingtonConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KensingtonConfirm_btn.Location = new System.Drawing.Point(578, 179);
+            this.KensingtonConfirm_btn.Location = new System.Drawing.Point(576, 179);
             this.KensingtonConfirm_btn.Name = "KensingtonConfirm_btn";
             this.KensingtonConfirm_btn.Size = new System.Drawing.Size(192, 28);
             this.KensingtonConfirm_btn.TabIndex = 20;
@@ -630,7 +634,7 @@
             // 
             this.RestockAdesso_txtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RestockAdesso_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.RestockAdesso_txtBox.Location = new System.Drawing.Point(291, 216);
+            this.RestockAdesso_txtBox.Location = new System.Drawing.Point(290, 216);
             this.RestockAdesso_txtBox.Name = "RestockAdesso_txtBox";
             this.RestockAdesso_txtBox.Size = new System.Drawing.Size(191, 24);
             this.RestockAdesso_txtBox.TabIndex = 12;
@@ -639,7 +643,7 @@
             // 
             this.RestockKensington_txtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RestockKensington_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.RestockKensington_txtBox.Location = new System.Drawing.Point(291, 181);
+            this.RestockKensington_txtBox.Location = new System.Drawing.Point(290, 181);
             this.RestockKensington_txtBox.Name = "RestockKensington_txtBox";
             this.RestockKensington_txtBox.Size = new System.Drawing.Size(191, 24);
             this.RestockKensington_txtBox.TabIndex = 11;
@@ -673,14 +677,14 @@
             this.RestockMiniKeyboard_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.RestockMiniKeyboard_lbl.Location = new System.Drawing.Point(4, 79);
             this.RestockMiniKeyboard_lbl.Name = "RestockMiniKeyboard_lbl";
-            this.RestockMiniKeyboard_lbl.Size = new System.Drawing.Size(143, 18);
+            this.RestockMiniKeyboard_lbl.Size = new System.Drawing.Size(115, 18);
             this.RestockMiniKeyboard_lbl.TabIndex = 19;
-            this.RestockMiniKeyboard_lbl.Text = "HP Mini Keyboard";
+            this.RestockMiniKeyboard_lbl.Text = "Mini Keyboard";
             // 
             // MouseConfirm_btn
             // 
             this.MouseConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MouseConfirm_btn.Location = new System.Drawing.Point(578, 144);
+            this.MouseConfirm_btn.Location = new System.Drawing.Point(576, 144);
             this.MouseConfirm_btn.Name = "MouseConfirm_btn";
             this.MouseConfirm_btn.Size = new System.Drawing.Size(192, 28);
             this.MouseConfirm_btn.TabIndex = 19;
@@ -692,7 +696,7 @@
             // 
             this.EkConfirm_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.EkConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EkConfirm_btn.Location = new System.Drawing.Point(578, 109);
+            this.EkConfirm_btn.Location = new System.Drawing.Point(576, 109);
             this.EkConfirm_btn.Name = "EkConfirm_btn";
             this.EkConfirm_btn.Size = new System.Drawing.Size(192, 28);
             this.EkConfirm_btn.TabIndex = 18;
@@ -704,7 +708,7 @@
             // 
             this.ReStockHeadphonestxtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ReStockHeadphonestxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.ReStockHeadphonestxtBox.Location = new System.Drawing.Point(291, 287);
+            this.ReStockHeadphonestxtBox.Location = new System.Drawing.Point(290, 287);
             this.ReStockHeadphonestxtBox.Name = "ReStockHeadphonestxtBox";
             this.ReStockHeadphonestxtBox.Size = new System.Drawing.Size(191, 24);
             this.ReStockHeadphonestxtBox.TabIndex = 16;
@@ -725,7 +729,7 @@
             this.RestockMousetxtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RestockMousetxtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.RestockMousetxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.RestockMousetxtBox.Location = new System.Drawing.Point(291, 146);
+            this.RestockMousetxtBox.Location = new System.Drawing.Point(290, 146);
             this.RestockMousetxtBox.Name = "RestockMousetxtBox";
             this.RestockMousetxtBox.Size = new System.Drawing.Size(191, 24);
             this.RestockMousetxtBox.TabIndex = 10;
@@ -745,7 +749,7 @@
             // 
             this.ReStockEKtxtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ReStockEKtxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.ReStockEKtxtBox.Location = new System.Drawing.Point(291, 111);
+            this.ReStockEKtxtBox.Location = new System.Drawing.Point(290, 111);
             this.ReStockEKtxtBox.Name = "ReStockEKtxtBox";
             this.ReStockEKtxtBox.Size = new System.Drawing.Size(191, 24);
             this.ReStockEKtxtBox.TabIndex = 7;
@@ -777,7 +781,7 @@
             this.NewInStock_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.NewInStock_lbl.AutoSize = true;
             this.NewInStock_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewInStock_lbl.Location = new System.Drawing.Point(578, 10);
+            this.NewInStock_lbl.Location = new System.Drawing.Point(576, 10);
             this.NewInStock_lbl.Name = "NewInStock_lbl";
             this.NewInStock_lbl.Size = new System.Drawing.Size(246, 16);
             this.NewInStock_lbl.TabIndex = 2;
@@ -789,7 +793,7 @@
             this.RestockQuantities_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RestockQuantities_lbl.AutoSize = true;
             this.RestockQuantities_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.RestockQuantities_lbl.Location = new System.Drawing.Point(291, 8);
+            this.RestockQuantities_lbl.Location = new System.Drawing.Point(290, 8);
             this.RestockQuantities_lbl.Name = "RestockQuantities_lbl";
             this.RestockQuantities_lbl.Size = new System.Drawing.Size(162, 20);
             this.RestockQuantities_lbl.TabIndex = 1;
@@ -810,7 +814,7 @@
             // 
             this.ReStockSKtxtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ReStockSKtxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.ReStockSKtxtBox.Location = new System.Drawing.Point(291, 41);
+            this.ReStockSKtxtBox.Location = new System.Drawing.Point(290, 41);
             this.ReStockSKtxtBox.Name = "ReStockSKtxtBox";
             this.ReStockSKtxtBox.Size = new System.Drawing.Size(191, 24);
             this.ReStockSKtxtBox.TabIndex = 4;
@@ -818,7 +822,7 @@
             // HeadphonesConfirm_btn
             // 
             this.HeadphonesConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeadphonesConfirm_btn.Location = new System.Drawing.Point(578, 284);
+            this.HeadphonesConfirm_btn.Location = new System.Drawing.Point(576, 284);
             this.HeadphonesConfirm_btn.Name = "HeadphonesConfirm_btn";
             this.HeadphonesConfirm_btn.Size = new System.Drawing.Size(192, 30);
             this.HeadphonesConfirm_btn.TabIndex = 21;
@@ -830,9 +834,9 @@
             // 
             this.panel3.Controls.Add(this.SkConfirm_btn);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(578, 39);
+            this.panel3.Location = new System.Drawing.Point(576, 39);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(282, 28);
+            this.panel3.Size = new System.Drawing.Size(280, 28);
             this.panel3.TabIndex = 22;
             // 
             // SkConfirm_btn
@@ -863,7 +867,7 @@
             // 
             this.ReStockEMousetxtBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ReStockEMousetxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.ReStockEMousetxtBox.Location = new System.Drawing.Point(291, 251);
+            this.ReStockEMousetxtBox.Location = new System.Drawing.Point(290, 251);
             this.ReStockEMousetxtBox.Name = "ReStockEMousetxtBox";
             this.ReStockEMousetxtBox.Size = new System.Drawing.Size(191, 24);
             this.ReStockEMousetxtBox.TabIndex = 13;
@@ -871,7 +875,7 @@
             // EMouseConfirm_btn
             // 
             this.EMouseConfirm_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EMouseConfirm_btn.Location = new System.Drawing.Point(578, 249);
+            this.EMouseConfirm_btn.Location = new System.Drawing.Point(576, 249);
             this.EMouseConfirm_btn.Name = "EMouseConfirm_btn";
             this.EMouseConfirm_btn.Size = new System.Drawing.Size(192, 28);
             this.EMouseConfirm_btn.TabIndex = 20;
@@ -990,6 +994,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(295, 24);
             this.dateTimePicker1.TabIndex = 18;
+            this.dateTimePicker1.Value = new System.DateTime(2015, 12, 11, 0, 0, 0, 0);
             // 
             // EquipmentType_comboBox
             // 
@@ -1000,7 +1005,7 @@
             this.EquipmentType_comboBox.FormattingEnabled = true;
             this.EquipmentType_comboBox.Items.AddRange(new object[] {
             "Wireless Logitech Keyboard",
-            "HP Mini Keyboard",
+            "Mini Keyboard",
             "Microsoft 4000 Ergo Keyboard",
             "Wireless Logitech Mouse",
             "Kensington Trackball Mouse",
@@ -1062,9 +1067,9 @@
             this.Email_lbl.ForeColor = System.Drawing.Color.DarkRed;
             this.Email_lbl.Location = new System.Drawing.Point(301, 8);
             this.Email_lbl.Name = "Email_lbl";
-            this.Email_lbl.Size = new System.Drawing.Size(48, 17);
+            this.Email_lbl.Size = new System.Drawing.Size(385, 17);
             this.Email_lbl.TabIndex = 6;
-            this.Email_lbl.Text = "Email";
+            this.Email_lbl.Text = "Email (Press Enter If Name Does Not Auto-Populate)";
             // 
             // DistributedTo_comboBox
             // 
@@ -1185,33 +1190,33 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(-2, 817);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1905, 342);
@@ -1262,12 +1267,31 @@
             // 
             this.errorProvider4.ContainerControl = this;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataGridView2);
+            this.panel6.Location = new System.Drawing.Point(863, 126);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(178, 318);
+            this.panel6.TabIndex = 8;
+            this.panel6.Visible = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(4, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(174, 315);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1904, 1162);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tableLayoutPanel5);
@@ -1309,6 +1333,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1407,5 +1433,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
